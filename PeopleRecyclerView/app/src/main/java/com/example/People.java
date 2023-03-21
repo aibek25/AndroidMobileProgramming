@@ -4,9 +4,9 @@ public class People {
     // construct some data
 
     private Person[] people = {
-            new Person("Cristian", "Home", "1234", "www.cristian.com", "cristian.jpg"),
-            new Person("George", "Work", "2345", "www.george.com", "cristian.jpg"),
-            new Person("Cristinel", "School", "3456", "www.cristi.com", "cristian.jpg"),
+            new Person("Cristian George", "Home", "1234", "https://www.unitbv.com", "cristian.jpg"),
+            new Person("Cristian George", "Work", "2345", "https://www.unitbv.com", "cristian.jpg"),
+            new Person("Cristian George", "School", "3456", "https://www.unitbv.com", "cristian.jpg"),
     };
 
     public Person[] getData() {

@@ -5,11 +5,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements IRecyclerView {
-
     private RecyclerView listView = null;
     private DataAdapter adapter = null;
     private final People people = new People();
@@ -31,8 +31,16 @@ public class MainActivity extends AppCompatActivity implements IRecyclerView {
 
     @Override
     public void onClickItem(int position) {
-        // what we want if we click position
-        Toast.makeText(this, "Selected " + people.getPerson(position).getName(),
-                Toast.LENGTH_SHORT).show();
+        // make an intent and a bundle
+        Intent intent = new Intent(MainActivity.this, PersonActivity.class);
+        Bundle bundle = new Bundle();
+
+        // get the data
+        Person personData = people.getPerson(position);
+        bundle.putSerializable("personData", personData);
+        intent.putExtras(bundle);
+
+        // start activity
+        startActivity(intent);
     }
 }
